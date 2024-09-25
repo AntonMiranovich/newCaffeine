@@ -95,7 +95,6 @@ const BlockInfo = styled.div`
 const Menu = styled.div`
     max-width: 1220px;
     margin: auto;
-    padding: 5% 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,6 +127,7 @@ const Menu = styled.div`
         background-color: #fff9f1;
         border: 1px solid #f9c06a;
         max-width: 280px;
+        max-height: 364px;
 
         .itemInfo{
           display: flex;
