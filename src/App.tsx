@@ -6,13 +6,30 @@ import coffeeMenu1 from './assets/coffeeMenu1.svg'
 import coffeeMenu2 from './assets/coffeeMenu2.svg'
 import coffeeMenu3 from './assets/coffeeMenu3.svg'
 import coffeeMenu4 from './assets/coffeeMenu4.svg'
+import coffee_beans from './assets/coffeebeans.png'
+import badge from './assets/badge.png'
+import coffee_cup from './assets/coffeecup.png'
+import best_price from './assets/bestprice.png'
+import cup from './assets/cup3.png'
+import rectangle from './assets/Group8.png'
+import kavichki from './assets/kavichji.png'
+import avatar from './assets/randomMan.png'
+import leftArrow from './assets/left.png'
+import rightArrow from './assets/right.png'
 
 
 const coffies = [
-  { id: 1, title: 'Cappuccino', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu1 },
-  { id: 2, title: 'Chai Latte', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu2 },
-  { id: 3, title: 'Macchiato', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu3 },
-  { id: 4, title: 'Expresso', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu4 },
+  { id: 1, title: 'Cappuccino', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu4 },
+  { id: 2, title: 'Chai Latte', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu3 },
+  { id: 3, title: 'Macchiato', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu2 },
+  { id: 4, title: 'Expresso', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu1 },
+];
+
+const advantages = [
+  { id: 1, title: 'Supreme Beans', description: 'Beans that provides great taste', icon: coffee_beans },
+  { id: 2, title: 'High Quality', description: 'We provide the highest quality', icon: badge },
+  { id: 3, title: 'Extraordinary', description: 'Coffee like you have never tasted', icon: coffee_cup },
+  { id: 4, title: 'Affordable Price', description: 'Our Coffee prices are easy to afford', icon: best_price },
 ];
 
 const Global = createGlobalStyle`
@@ -92,6 +109,7 @@ const BlockInfo = styled.div`
     font-weight: 400;
   }
 `
+
 const Menu = styled.div`
     max-width: 1220px;
     margin: auto;
@@ -175,6 +193,218 @@ const Button = styled.button`
             cursor: pointer;
 `
 
+const Advantages = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 82px auto;
+    gap: 20px;
+
+  h2 {
+    font-family: Playfair Display;
+    font-size: 54px;
+    font-weight: 700;
+    color: #603809;
+  }
+
+  p {
+    font-family: Playfair Display;
+    font-size: 20px;
+    font-weight: 400;
+    color: #707070;
+  }
+
+  .advantages_content {
+    display: flex;
+    flex-wrap:wrap;
+    gap: 20px;
+
+    .advantages_card {
+      border: 1px solid #F9C06A6B;
+      max-width: 280px;
+      height: 284px;
+      text-align: center;
+      background: #FFF9F1;
+      padding: 36px 43px;
+    
+      .coffee_beans, .badge, .coffee_cup, .best_price {
+        width: 88px;
+        height: 88px;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+        
+      h3 {
+        font-family: Playfair Display;
+        font-size: 22px;
+        font-weight: 700;
+        color: #603809;
+        margin: 25px auto 8px;
+      }
+  
+    }
+  }
+  .important {
+    font-family: Playfair Display;
+    font-size: 20px;
+    font-weight: 700;
+    color: #603809;
+  }
+`
+const BackgroundInfo = styled.div`
+  background-image: url(${rectangle});
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+
+  .wrapper{
+    display: flex;
+    justify-content:space-between;
+    margin: 0 auto;
+    padding: 5% 0;
+    max-width: 1220px;
+
+    .wrapperLeft{
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      max-width: 575px;
+  
+      h1{
+        font-family:'Playfair Display';
+        font-size: 54px;
+        font-weight: 700;
+        color: #FFFFFF;
+      }
+  
+      p{
+        font-family: 'Playfair Display';
+        font-size: 20px;
+        font-weight: 400;
+        color: #FFFFFF;
+      }
+    }
+  
+    .imgWrapperRight{
+      background-image: url(${cup});
+      width: 300px;
+      height: 467px;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+  
+
+`
+const Slider = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  padding: 5% 0;
+  gap: 45px;
+  max-width: 1220px;
+
+  h2{
+    font-family: 'Playfair Display';
+    font-size: 54px;
+    font-weight: 700;
+    color: #603809;
+  }
+
+  p{
+    font-family:'Playfair Display';
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .slider{
+    border: 1px solid #F9C06A6B;
+    background-color: #FFF9F1;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    .quotes{
+    background-image: url(${kavichki});
+    background-size: cover;
+    background-position: center;
+    width: 103px;
+    height:75px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+   }
+
+    p{
+      font-family: 'Playfair Display';
+      font-size: 18px;
+      font-weight: 600;
+      color: #707070;
+      margin: 129px 0 28px 0;
+      max-width: 80%;
+      line-height: 36px;
+    }
+
+    h2{
+      font-family: 'Playfair Display';
+      font-size: 32px;
+      font-weight: 700;
+      color: #603809;
+    }
+
+    .proff{
+      font-family: 'Playfair Display';
+      font-size: 20px;
+      font-weight: 400;
+      color: #707070;
+      margin: 5px 0 101px 0;
+    }
+
+    .avatar{
+      background-image: url(${avatar});
+    background-size: cover;
+    background-position: center;
+    width: 112px;
+    height:112px;
+    position: absolute;
+    bottom: -56px;
+    }
+
+    .arroyWrapperRight{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 82px;
+      height: 82px;
+      border-radius: 12px;
+      background-color: #F9C06A;
+      position: absolute;
+      right: -41px;
+      top: 43%;
+    }
+
+    .arroyWrapperLeft{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 82px;
+      height: 82px;
+      border-radius: 12px;
+      background-color: #F9C06A;
+      position: absolute;
+      left: -41px;
+      top: 43%;
+    }
+  }
+`
 
 const App = () => {
 
@@ -230,6 +460,55 @@ const App = () => {
           ))}
         </div>
       </Menu>
+
+      <Advantages>
+        <h2>Why are we different?</h2>
+        <p>We don’t just make your coffee, we make your day!</p>
+        <div className="advantages_content">
+          {advantages.map((el) =>
+            <div className="advantages_card" key={el.id}>
+              <img src={el.icon} alt="" />
+              <h3>{el.title}</h3>
+              <p>{el.description}</p>
+            </div>
+          )}
+        </div>
+        <p>Great ideas start with great coffee, Lets help you achieve that</p>
+        <p className="important">Get started today.</p>
+        <Button>Join Us</Button>
+      </Advantages>
+
+      <BackgroundInfo>
+        <div className='wrapper'>
+          <div className='wrapperLeft'>
+            <h1>Get a chance to have an
+              Amazing morning</h1>
+            <p>
+              We are giving you are one time opportunity to
+              experience a better life with coffee.
+            </p>
+            <Button>Order Now</Button>
+          </div>
+          <div className='imgWrapperRight'></div>
+        </div>
+      </BackgroundInfo>
+
+      <Slider>
+        <div>
+          <h2>Our coffee perfection feedback</h2>
+          <p>Our customers has amazing things to say about us</p>
+        </div>
+
+        <div className='slider'>
+          <div className='quotes' />
+          <div className='arroyWrapperRight'><img src={rightArrow} alt="" /></div>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset.....</p>
+          <h2>Jonny Thomas</h2>
+          <p className='proff'>Project Manager</p>
+          <div className='arroyWrapperLeft'><img src={leftArrow} alt="" /></div>
+          <div className='avatar' />
+        </div>
+      </Slider>
     </>
   )
 }
