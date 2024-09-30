@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import Header from './components/Header/Headet'
+import Footer from "./components/Footer/Footer"
 import img from './assets/coffeeimage.png'
 import coffee from './assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.png'
 import coffeeMenu1 from './assets/coffeeMenu1.svg'
@@ -258,6 +259,7 @@ const BackgroundInfo = styled.div`
   height: 100%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 
   .wrapper{
     display: flex;
@@ -293,6 +295,7 @@ const BackgroundInfo = styled.div`
       height: 467px;
       background-size: contain;
       background-position: center;
+      background-repeat: no-repeat;
     }
   }
   
@@ -440,7 +443,6 @@ const App = () => {
         </div>
       </BlockInfo>
 
-
       <Menu>
         <h2>Enjoy a new blend of coffee style</h2>
         <p>Explore all flavours of coffee with us. There is always a new cup worth experiencing.</p>
@@ -509,6 +511,8 @@ const App = () => {
           <div className='avatar' />
         </div>
       </Slider>
+
+      <Footer />
     </>
   )
 }
