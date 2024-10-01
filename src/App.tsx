@@ -1,23 +1,23 @@
-import styled, { createGlobalStyle } from 'styled-components'
-import Header from './components/Header/Headet'
-import Footer from "./components/Footer/Footer"
-import img from './assets/coffeeimage.png'
-import coffee from './assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.png'
-import coffeeMenu1 from './assets/coffeeMenu1.svg'
-import coffeeMenu2 from './assets/coffeeMenu2.svg'
-import coffeeMenu3 from './assets/coffeeMenu3.svg'
-import coffeeMenu4 from './assets/coffeeMenu4.svg'
-import coffee_beans from './assets/coffeebeans.png'
-import badge from './assets/badge.png'
-import coffee_cup from './assets/coffeecup.png'
-import best_price from './assets/bestprice.png'
-import cup from './assets/cup3.png'
-import rectangle from './assets/Group8.png'
-import kavichki from './assets/kavichji.png'
-import avatar from './assets/randomMan.png'
-import leftArrow from './assets/left.png'
-import rightArrow from './assets/right.png'
-
+import styled, { createGlobalStyle } from 'styled-components';
+import Header from './components/Header/Headet';
+import Footer from './components/Footer/Footer';
+import img from './assets/coffeeimage.png';
+import coffee from './assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.png';
+import coffeeMenu1 from './assets/coffeeMenu1.svg';
+import coffeeMenu2 from './assets/coffeeMenu2.svg';
+import coffeeMenu3 from './assets/coffeeMenu3.svg';
+import coffeeMenu4 from './assets/coffeeMenu4.svg';
+import coffee_beans from './assets/coffeebeans.png';
+import badge from './assets/badge.png';
+import coffee_cup from './assets/coffeecup.png';
+import best_price from './assets/bestprice.png';
+import cup from './assets/cup3.png';
+import rectangle from './assets/Group8.png';
+import kavichki from './assets/kavichji.png';
+import avatar from './assets/randomMan.png';
+import leftArrow from './assets/left.png';
+import rightArrow from './assets/right.png';
+import { useEffect, useState } from 'react';
 
 const coffies = [
   { id: 1, title: 'Cappuccino', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu4 },
@@ -31,6 +31,34 @@ const advantages = [
   { id: 2, title: 'High Quality', description: 'We provide the highest quality', icon: badge },
   { id: 3, title: 'Extraordinary', description: 'Coffee like you have never tasted', icon: coffee_cup },
   { id: 4, title: 'Affordable Price', description: 'Our Coffee prices are easy to afford', icon: best_price },
+];
+
+const sliderObj = [
+  {
+    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset.....`,
+    name: `Jonny Thomas`,
+    profession: `Project Manager`,
+  },
+  {
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis enim doloremque perspiciatis nostrum inventore consequuntur dicta exercitationem! Optio debitis maxime explicabo ab ad, fugiat voluptas?`,
+    name: `Jon Smith`,
+    profession: `Front`,
+  },
+  {
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis soluta nam quia minima, fugiat totam ratione distinctio voluptatum iure consequatur quisquam dicta alias reiciendis placeat harum architecto neque cum pariatur.`,
+    name: `Anton`,
+    profession: `Dev`,
+  },
+  {
+    description: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam dolorem officia veniam dolor nobis voluptates necessitatibus vero, porro nulla labore.`,
+    name: `Jonny Thomas`,
+    profession: `HR`,
+  },
+  {
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci harum, tempora perferendis amet delectus?  Ipsa adipisci harum, tempora perferendis amet delectus?  Ipsa adipisci harum, tempora perferendis amet delectus?`,
+    name: `Thomas`,
+    profession: `Project Manager`,
+  },
 ];
 
 const Global = createGlobalStyle`
@@ -48,7 +76,7 @@ const Global = createGlobalStyle`
   a {
     text-decoration: none;
   }
-`
+`;
 
 const BackgroundPreview = styled.div`
   background-image: url(${img});
@@ -57,7 +85,7 @@ const BackgroundPreview = styled.div`
   background-size: cover;
   background-position: center;
 
-  .landing{
+  .landing {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -65,24 +93,24 @@ const BackgroundPreview = styled.div`
     padding: 5% 0;
     max-width: 1220px;
 
-    p{
-      font-family:' Playfair Display';
+    p {
+      font-family: ' Playfair Display';
       font-size: 22px;
       font-weight: 500;
-      color: #FFFFFF;
+      color: #ffffff;
       max-width: 527px;
     }
 
-    h1{
+    h1 {
       font-family: Clicker Script;
       font-size: 220px;
       font-weight: 400;
       line-height: 290.58px;
-      color: #FFFFFF;
+      color: #ffffff;
       max-width: 527px;
     }
   }
-`
+`;
 const BlockInfo = styled.div`
   display: flex;
   justify-content: space-between;
@@ -90,117 +118,121 @@ const BlockInfo = styled.div`
   margin: auto;
   padding: 150px 0;
   gap: 90px;
-  
-  .content{
+
+  .content {
     display: flex;
     flex-direction: column;
     gap: 29px;
   }
 
-  h2{
+  h2 {
     font-family: 'Playfair Display';
     font-size: 54px;
     font-weight: 700;
     color: #603809;
   }
 
-  p{
+  p {
     font-family: 'Playfair Display';
     font-size: 20px;
     font-weight: 400;
   }
-`
+`;
 
 const Menu = styled.div`
-    max-width: 1220px;
-    margin: auto;
+  max-width: 1220px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+  h2 {
+    font-family: 'Playfair Display';
+    font-size: 54px;
+    font-weight: 700;
+    color: #603809;
+  }
+
+  p {
+    font-family: 'Playfair Display';
+    font-size: 20px;
+    font-weight: 400;
+    color: #603809;
+  }
+
+  .content {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap;
 
-    h2{
-      font-family: 'Playfair Display';
-      font-size: 54px;
-      font-weight: 700;
-      color: #603809;
-    }
+    .item {
+      background-color: #fff9f1;
+      border: 1px solid #f9c06a;
+      max-width: 280px;
+      max-height: 364px;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
 
-    p{
-      font-family: 'Playfair Display';
-      font-size: 20px;
-      font-weight: 400;
-      color: #603809;
-    }
+      .itemInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 0 42px;
 
-    .content{
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: row;
-      gap: 30px;
-      flex-wrap: wrap;
+        h3 {
+          font-family: 'Playfair Display';
+          font-size: 22px;
+          font-weight: 600;
+          color: #603809;
+        }
 
-      .item{
-        background-color: #fff9f1;
-        border: 1px solid #f9c06a;
-        max-width: 280px;
-        max-height: 364px;
+        p {
+          font-family: 'Playfair Display';
+          font-size: 16px;
+          font-weight: 400;
+          color: #1e1e1e;
+        }
 
-        .itemInfo{
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 8px;
-          padding: 14px 0 42px;
-
-          h3{
-            font-family: 'Playfair Display';
-            font-size: 22px;
-            font-weight: 600;
-            color: #603809;
-          }
-
-          p{
-            font-family: 'Playfair Display';
-            font-size: 16px;
-            font-weight: 400;
-            color: #1E1E1E;
-          }
-
-          .price{
-            font-family: 'Playfair Display';
-            font-size: 18px;
-            font-weight: 700;
-            color: #603809;
-          }
+        .price {
+          font-family: 'Playfair Display';
+          font-size: 18px;
+          font-weight: 700;
+          color: #603809;
         }
       }
     }
-`
+  }
+`;
 
 const Button = styled.button`
-              display: block;
-            border: none;
-            background: #F9C06A;
-            padding: 14px 27px;
-            border-radius: 24px;
-            color: #1E1E1E;
-            max-width: 155px;
-            font-family: 'Playfair Display';
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-`
+  display: block;
+  border: none;
+  background: #f9c06a;
+  padding: 14px 27px;
+  border-radius: 24px;
+  color: #1e1e1e;
+  max-width: 155px;
+  font-family: 'Playfair Display';
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+`;
 
 const Advantages = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin: 82px auto;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 82px auto;
+  gap: 20px;
 
   h2 {
     font-family: Playfair Display;
@@ -218,24 +250,32 @@ const Advantages = styled.div`
 
   .advantages_content {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     gap: 20px;
 
     .advantages_card {
-      border: 1px solid #F9C06A6B;
+      border: 1px solid #f9c06a6b;
       max-width: 280px;
       height: 284px;
       text-align: center;
-      background: #FFF9F1;
+      background: #fff9f1;
       padding: 36px 43px;
-    
-      .coffee_beans, .badge, .coffee_cup, .best_price {
+      transition: transform 0.3s ease;
+      &:hover {
+        background-color: #ffeed8;
+        transform: scale(1.1);
+      }
+
+      .coffee_beans,
+      .badge,
+      .coffee_cup,
+      .best_price {
         width: 88px;
         height: 88px;
         background-size: contain;
         background-repeat: no-repeat;
       }
-        
+
       h3 {
         font-family: Playfair Display;
         font-size: 22px;
@@ -243,7 +283,6 @@ const Advantages = styled.div`
         color: #603809;
         margin: 25px auto 8px;
       }
-  
     }
   }
   .important {
@@ -252,7 +291,7 @@ const Advantages = styled.div`
     font-weight: 700;
     color: #603809;
   }
-`
+`;
 const BackgroundInfo = styled.div`
   background-image: url(${rectangle});
   width: 100%;
@@ -261,35 +300,35 @@ const BackgroundInfo = styled.div`
   background-position: center;
   background-repeat: no-repeat;
 
-  .wrapper{
+  .wrapper {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     margin: 0 auto;
     padding: 5% 0;
     max-width: 1220px;
 
-    .wrapperLeft{
+    .wrapperLeft {
       display: flex;
       flex-direction: column;
       gap: 22px;
       max-width: 575px;
-  
-      h1{
-        font-family:'Playfair Display';
+
+      h1 {
+        font-family: 'Playfair Display';
         font-size: 54px;
         font-weight: 700;
-        color: #FFFFFF;
+        color: #ffffff;
       }
-  
-      p{
+
+      p {
         font-family: 'Playfair Display';
         font-size: 20px;
         font-weight: 400;
-        color: #FFFFFF;
+        color: #ffffff;
       }
     }
-  
-    .imgWrapperRight{
+
+    .imgWrapperRight {
       background-image: url(${cup});
       width: 300px;
       height: 467px;
@@ -298,9 +337,7 @@ const BackgroundInfo = styled.div`
       background-repeat: no-repeat;
     }
   }
-  
-
-`
+`;
 const Slider = styled.div`
   display: flex;
   flex-direction: column;
@@ -312,41 +349,42 @@ const Slider = styled.div`
   gap: 45px;
   max-width: 1220px;
 
-  h2{
+  h2 {
     font-family: 'Playfair Display';
     font-size: 54px;
     font-weight: 700;
     color: #603809;
   }
 
-  p{
-    font-family:'Playfair Display';
+  p {
+    font-family: 'Playfair Display';
     font-size: 20px;
     font-weight: 400;
   }
 
-  .slider{
-    border: 1px solid #F9C06A6B;
-    background-color: #FFF9F1;
+  .slider {
+    border: 1px solid #f9c06a6b;
+    background-color: #fff9f1;
     max-width: 80%;
+    height: 524px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     position: relative;
 
-    .quotes{
-    background-image: url(${kavichki});
-    background-size: cover;
-    background-position: center;
-    width: 103px;
-    height:75px;
-    position: absolute;
-    left: 20px;
-    top: 20px;
-   }
+    .quotes {
+      background-image: url(${kavichki});
+      background-size: cover;
+      background-position: center;
+      width: 103px;
+      height: 75px;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+    }
 
-    p{
+    p {
       font-family: 'Playfair Display';
       font-size: 18px;
       font-weight: 600;
@@ -356,14 +394,14 @@ const Slider = styled.div`
       line-height: 36px;
     }
 
-    h2{
+    h2 {
       font-family: 'Playfair Display';
       font-size: 32px;
       font-weight: 700;
       color: #603809;
     }
 
-    .proff{
+    .proff {
       font-family: 'Playfair Display';
       font-size: 20px;
       font-weight: 400;
@@ -371,45 +409,61 @@ const Slider = styled.div`
       margin: 5px 0 101px 0;
     }
 
-    .avatar{
+    .avatar {
       background-image: url(${avatar});
-    background-size: cover;
-    background-position: center;
-    width: 112px;
-    height:112px;
-    position: absolute;
-    bottom: -56px;
+      background-size: cover;
+      background-position: center;
+      width: 112px;
+      height: 112px;
+      position: absolute;
+      bottom: -56px;
     }
 
-    .arroyWrapperRight{
+    .arroyWrapperRight {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 82px;
       height: 82px;
       border-radius: 12px;
-      background-color: #F9C06A;
+      background-color: #f9c06a;
       position: absolute;
       right: -41px;
       top: 43%;
     }
 
-    .arroyWrapperLeft{
+    .arroyWrapperLeft {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 82px;
       height: 82px;
       border-radius: 12px;
-      background-color: #F9C06A;
+      background-color: #f9c06a;
       position: absolute;
       left: -41px;
       top: 43%;
     }
   }
-`
+`;
 
 const App = () => {
+  const [count, setCount] = useState(1);
+
+  const nextSlide = () => {
+    count === sliderObj.length - 1 ? setCount(0) : setCount(count + 1);
+  };
+
+  const lastSlide = () => {
+    count === 0 ? setCount(sliderObj.length - 1) : setCount(count - 1);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [count]);
 
   return (
     <>
@@ -417,7 +471,7 @@ const App = () => {
 
       <BackgroundPreview>
         <Header />
-        <div className='landing'>
+        <div className="landing">
           <p>We’ve got your morning covered with</p>
           <h1>Coffee</h1>
           <p>
@@ -429,7 +483,7 @@ const App = () => {
       </BackgroundPreview>
 
       <BlockInfo>
-        <div className='content'>
+        <div className="content">
           <h2>Discover the best coffee</h2>
           <p>
             Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a
@@ -446,16 +500,16 @@ const App = () => {
       <Menu>
         <h2>Enjoy a new blend of coffee style</h2>
         <p>Explore all flavours of coffee with us. There is always a new cup worth experiencing.</p>
-        <div className='content'>
+        <div className="content">
           {coffies.map((el, index) => (
-            <div key={index} className='item'>
+            <div key={index} className="item">
               <div>
                 <img src={el.img} alt="coffee" />
               </div>
-              <div className='itemInfo'>
+              <div className="itemInfo">
                 <h3>{el.title}</h3>
                 <p>{el.description}</p>
-                <p className='price'>{el.price}</p>
+                <p className="price">{el.price}</p>
                 <Button>Order Now</Button>
               </div>
             </div>
@@ -467,13 +521,13 @@ const App = () => {
         <h2>Why are we different?</h2>
         <p>We don’t just make your coffee, we make your day!</p>
         <div className="advantages_content">
-          {advantages.map((el) =>
+          {advantages.map(el => (
             <div className="advantages_card" key={el.id}>
               <img src={el.icon} alt="" />
               <h3>{el.title}</h3>
               <p>{el.description}</p>
             </div>
-          )}
+          ))}
         </div>
         <p>Great ideas start with great coffee, Lets help you achieve that</p>
         <p className="important">Get started today.</p>
@@ -481,17 +535,13 @@ const App = () => {
       </Advantages>
 
       <BackgroundInfo>
-        <div className='wrapper'>
-          <div className='wrapperLeft'>
-            <h1>Get a chance to have an
-              Amazing morning</h1>
-            <p>
-              We are giving you are one time opportunity to
-              experience a better life with coffee.
-            </p>
+        <div className="wrapper">
+          <div className="wrapperLeft">
+            <h1>Get a chance to have an Amazing morning</h1>
+            <p>We are giving you are one time opportunity to experience a better life with coffee.</p>
             <Button>Order Now</Button>
           </div>
-          <div className='imgWrapperRight'></div>
+          <div className="imgWrapperRight"></div>
         </div>
       </BackgroundInfo>
 
@@ -501,20 +551,24 @@ const App = () => {
           <p>Our customers has amazing things to say about us</p>
         </div>
 
-        <div className='slider'>
-          <div className='quotes' />
-          <div className='arroyWrapperRight'><img src={rightArrow} alt="" /></div>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset.....</p>
-          <h2>Jonny Thomas</h2>
-          <p className='proff'>Project Manager</p>
-          <div className='arroyWrapperLeft'><img src={leftArrow} alt="" /></div>
-          <div className='avatar' />
+        <div className="slider">
+          <div className="quotes" />
+          <div className="arroyWrapperRight" onClick={() => nextSlide()}>
+            <img src={rightArrow} alt="" />
+          </div>
+          <p>{sliderObj[count].description}</p>
+          <h2>{sliderObj[count].name}</h2>
+          <p className="proff">{sliderObj[count].profession}</p>
+          <div className="arroyWrapperLeft" onClick={() => lastSlide()}>
+            <img src={leftArrow} alt="" />
+          </div>
+          <div className="avatar" />
         </div>
       </Slider>
 
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
