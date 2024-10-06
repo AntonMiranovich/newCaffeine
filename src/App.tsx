@@ -35,7 +35,7 @@ const advantages = [
 
 const sliderObj = [
   {
-    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset.....`,
+    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.  scrambled it to make a type specimen book. It has survivining essentially unchanged. It was popularised in the 1960s with the release of Letraset.....`,
     name: `Jonny Thomas`,
     profession: `Project Manager`,
   },
@@ -93,6 +93,10 @@ const BackgroundPreview = styled.div`
     padding: 5% 0;
     max-width: 1220px;
 
+    @media (max-width: 900px) {
+      padding: 5%;
+    }
+
     p {
       font-family: ' Playfair Display';
       font-size: 22px;
@@ -108,9 +112,14 @@ const BackgroundPreview = styled.div`
       line-height: 290.58px;
       color: #ffffff;
       max-width: 527px;
+
+      @media (max-width: 400px) {
+        font: 400 120px 'Clicker Script';
+      }
     }
   }
 `;
+
 const BlockInfo = styled.div`
   display: flex;
   justify-content: space-between;
@@ -118,6 +127,14 @@ const BlockInfo = styled.div`
   margin: auto;
   padding: 150px 0;
   gap: 90px;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+  @media (max-width: 900px) {
+    padding: 2%;
+    gap: 50px;
+  }
 
   .content {
     display: flex;
@@ -137,6 +154,19 @@ const BlockInfo = styled.div`
     font-size: 20px;
     font-weight: 400;
   }
+
+  @media (max-width: 900px) {
+    .img_coffee {
+      width: 50%;
+      height: 50%;
+    }
+  }
+  @media (max-width: 400px) {
+    .img_coffee {
+      width: 100%;
+      height: 100%;
+    }
+  }
 `;
 
 const Menu = styled.div`
@@ -148,11 +178,19 @@ const Menu = styled.div`
   flex-direction: column;
   gap: 20px;
 
+  @media (max-width: 900px) {
+    padding: 2%;
+  }
+
   h2 {
     font-family: 'Playfair Display';
     font-size: 54px;
     font-weight: 700;
     color: #603809;
+
+    @media (max-width: 900px) {
+      font: 700 48px 'Playfair Display';
+    }
   }
 
   p {
@@ -169,6 +207,10 @@ const Menu = styled.div`
     flex-direction: row;
     gap: 30px;
     flex-wrap: wrap;
+
+    @media (max-width: 1200px) {
+      gap: 50px;
+    }
 
     .item {
       background-color: #fff9f1;
@@ -312,12 +354,19 @@ const BackgroundInfo = styled.div`
       flex-direction: column;
       gap: 22px;
       max-width: 575px;
+      @media (max-width: 400px) {
+        padding: 5%;
+      }
 
       h1 {
         font-family: 'Playfair Display';
         font-size: 54px;
         font-weight: 700;
         color: #ffffff;
+
+        @media (max-width: 900px) {
+          font-size: 40px;
+        }
       }
 
       p {
@@ -348,6 +397,10 @@ const Slider = styled.div`
   padding: 5% 0;
   gap: 45px;
   max-width: 1220px;
+
+  @media (max-width: 1000px) {
+    padding: 82px 70px;
+  }
 
   h2 {
     font-family: 'Playfair Display';
@@ -392,6 +445,10 @@ const Slider = styled.div`
       margin: 129px 0 28px 0;
       max-width: 80%;
       line-height: 36px;
+
+      @media (max-width: 1000px) {
+        font-size: 10px;
+      }
     }
 
     h2 {
@@ -399,6 +456,10 @@ const Slider = styled.div`
       font-size: 32px;
       font-weight: 700;
       color: #603809;
+
+      @media (max-width: 1000px) {
+        font-size: 20px;
+      }
     }
 
     .proff {
@@ -407,6 +468,10 @@ const Slider = styled.div`
       font-weight: 400;
       color: #707070;
       margin: 5px 0 101px 0;
+
+      @media (max-width: 1000px) {
+        font-size: 15px;
+      }
     }
 
     .avatar {
@@ -417,6 +482,12 @@ const Slider = styled.div`
       height: 112px;
       position: absolute;
       bottom: -56px;
+
+      @media (max-width: 1000px) {
+        width: 56px;
+        height: 56px;
+        bottom: -28px;
+      }
     }
 
     .arroyWrapperRight {

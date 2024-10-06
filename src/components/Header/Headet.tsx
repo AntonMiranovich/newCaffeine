@@ -9,6 +9,10 @@ const StyleDiv = styled.div`
   padding: 1% 0;
   margin: auto;
 
+  @media (max-width: 900px) {
+    padding: 2%;
+  }
+
   h1 {
     font-family: Clicker Script;
     font-size: 35px;
@@ -33,6 +37,9 @@ const StyleDiv = styled.div`
     border: none;
     border-radius: 24px;
     color: #1e1e1e;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   p {
