@@ -27,6 +27,7 @@ const BackgroundCoffeBeans = styled.div`
     align-items: center;
     gap: 66px;
     padding: 162px 2% 50px;
+    flex-wrap: wrap-reverse;
 
     .info_text {
       display: flex;
@@ -61,63 +62,6 @@ const BackgroundCoffeBeans = styled.div`
       .images {
         display: flex;
         gap: 20px;
-
-        /* .facebook{
-          width: $width;
-          height: $height;
-          -webkit-mask: $path no-repeat 50% 50%;
-          mask: $path no-repeat 50% 50%;
-          mask-size: cover;
-          -webkit-mask-size: cover;
-          background-color: $color;
-
-          &:hover {
-            background-color: $hover-color;
-            cursor: pointer;
-          }
-        }
-        .instagram{
-          width: $width;
-          height: $height;
-          -webkit-mask: $path no-repeat 50% 50%;
-          mask: $path no-repeat 50% 50%;
-          mask-size: cover;
-          -webkit-mask-size: cover;
-          background-color: $color;
-
-          &:hover {
-            background-color: $hover-color;
-            cursor: pointer;
-          }
-        }
-        .youtube{
-          width: $width;
-          height: $height;
-          -webkit-mask: $path no-repeat 50% 50%;
-          mask: $path no-repeat 50% 50%;
-          mask-size: cover;
-          -webkit-mask-size: cover;
-          background-color: $color;
-
-          &:hover {
-            background-color: $hover-color;
-            cursor: pointer;
-          }
-        }
-        .twitter{
-          width: $width;
-          height: $height;
-          -webkit-mask: $path no-repeat 50% 50%;
-          mask: $path no-repeat 50% 50%;
-          mask-size: cover;
-          -webkit-mask-size: cover;
-          background-color: $color;
-
-          &:hover {
-            background-color: $hover-color;
-            cursor: pointer;
-          }
-        } */
       }
     }
 
@@ -151,11 +95,6 @@ const BackgroundCoffeBeans = styled.div`
         @media (max-width: 900px) {
           font-size: 14px;
         }
-      }
-
-      &:hover {
-        background-color: $hover-color;
-        cursor: pointer;
       }
 
       .info_contact,
@@ -192,10 +131,10 @@ const Footer = () => {
               since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
             <div className="images">
-              <img src={facebook} className="facebook" alt="facebook" />
-              <img src={instagram} className="instagram" alt="instagram" />
-              <img src={youtube} className="youtube" alt="youtube" />
-              <img src={twitter} className="twitter" alt="twitter" />
+              <img className="facebook" src={facebook} alt="facebook" />
+              <img className="instagram" src={instagram} alt="instagram" />
+              <img className="youtube" src={youtube} alt="youtube" />
+              <img className="youtube" src={twitter} alt="youtube" />
             </div>
           </div>
           <div className="info_menu">
@@ -216,8 +155,8 @@ const Footer = () => {
               {[
                 'Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016',
                 '+1 202-918-2132',
-                'beanscene@mail.com',
-                'www.beanscene.com',
+                'mailto:beanscene@mail.com',
+                'https://www.beanscene.com',
               ].map((el, i) => (
                 <p key={i}>{el}</p>
               ))}

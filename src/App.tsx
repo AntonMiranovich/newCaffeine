@@ -113,7 +113,11 @@ const BackgroundPreview = styled.div`
       color: #ffffff;
       max-width: 527px;
 
-      @media (max-width: 400px) {
+      @media (max-width: 900px) {
+        font: 400 180px 'Clicker Script';
+      }
+
+      @media (max-width: 500px) {
         font: 400 120px 'Clicker Script';
       }
     }
@@ -273,6 +277,7 @@ const Advantages = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   margin: 82px auto;
   gap: 20px;
 
@@ -293,6 +298,7 @@ const Advantages = styled.div`
   .advantages_content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 
     .advantages_card {
@@ -334,6 +340,7 @@ const Advantages = styled.div`
     color: #603809;
   }
 `;
+
 const BackgroundInfo = styled.div`
   background-image: url(${rectangle});
   width: 100%;
@@ -387,6 +394,7 @@ const BackgroundInfo = styled.div`
     }
   }
 `;
+
 const Slider = styled.div`
   display: flex;
   flex-direction: column;
@@ -435,6 +443,11 @@ const Slider = styled.div`
       position: absolute;
       left: 20px;
       top: 20px;
+
+      @media (max-width: 1000px) {
+        width: 70px;
+        height: 50px;
+      }
     }
 
     p {
