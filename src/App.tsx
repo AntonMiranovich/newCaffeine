@@ -18,6 +18,7 @@ import avatar from './assets/randomMan.png';
 import leftArrow from './assets/left.png';
 import rightArrow from './assets/right.png';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const coffies = [
   { id: 1, title: 'Cappuccino', description: 'Coffee 50% | Milk 50%', price: '$8.50', img: coffeeMenu4 },
@@ -124,7 +125,7 @@ const BackgroundPreview = styled.div`
   }
 `;
 
-const BlockInfo = styled.div`
+const BlockInfo = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   max-width: 1220px;
@@ -173,7 +174,7 @@ const BlockInfo = styled.div`
   }
 `;
 
-const Menu = styled.div`
+const Menu = styled(motion.div)`
   max-width: 1220px;
   margin: auto;
   display: flex;
@@ -258,7 +259,7 @@ const Menu = styled.div`
   }
 `;
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   display: block;
   border: none;
   background: #f9c06a;
@@ -272,7 +273,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Advantages = styled.div`
+const Advantages = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -395,7 +396,7 @@ const BackgroundInfo = styled.div`
   }
 `;
 
-const Slider = styled.div`
+const Slider = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -555,18 +556,24 @@ const App = () => {
 
       <BackgroundPreview>
         <Header />
-        <div className="landing">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 3 }}
+          viewport={{ once: true }}
+          className="landing"
+        >
           <p>We’ve got your morning covered with</p>
           <h1>Coffee</h1>
           <p>
             It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We provide the best for our
             customers.
           </p>
-          <Button>Order Now</Button>
-        </div>
+          <Button whileHover={{ scale: 1.3 }}>Order Now</Button>
+        </motion.div>
       </BackgroundPreview>
 
-      <BlockInfo>
+      <BlockInfo initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} viewport={{ once: true }}>
         <div className="content">
           <h2>Discover the best coffee</h2>
           <p>
@@ -574,14 +581,14 @@ const App = () => {
             cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you
             have ever tasted.
           </p>
-          <Button>Order Now</Button>
+          <Button whileHover={{ scale: 1.3 }}>Order Now</Button>
         </div>
         <div>
           <img src={coffee} alt="coffee" />
         </div>
       </BlockInfo>
 
-      <Menu>
+      <Menu initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} viewport={{ once: true }}>
         <h2>Enjoy a new blend of coffee style</h2>
         <p>Explore all flavours of coffee with us. There is always a new cup worth experiencing.</p>
         <div className="content">
@@ -594,14 +601,14 @@ const App = () => {
                 <h3>{el.title}</h3>
                 <p>{el.description}</p>
                 <p className="price">{el.price}</p>
-                <Button>Order Now</Button>
+                <Button whileHover={{ scale: 1.3 }}>Order Now</Button>
               </div>
             </div>
           ))}
         </div>
       </Menu>
 
-      <Advantages>
+      <Advantages initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} viewport={{ once: true }}>
         <h2>Why are we different?</h2>
         <p>We don’t just make your coffee, we make your day!</p>
         <div className="advantages_content">
@@ -615,21 +622,27 @@ const App = () => {
         </div>
         <p>Great ideas start with great coffee, Lets help you achieve that</p>
         <p className="important">Get started today.</p>
-        <Button>Join Us</Button>
+        <Button whileHover={{ scale: 1.3 }}>Join Us</Button>
       </Advantages>
 
       <BackgroundInfo>
-        <div className="wrapper">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 3 }}
+          viewport={{ once: true }}
+          className="wrapper"
+        >
           <div className="wrapperLeft">
             <h1>Get a chance to have an Amazing morning</h1>
             <p>We are giving you are one time opportunity to experience a better life with coffee.</p>
-            <Button>Order Now</Button>
+            <Button whileHover={{ scale: 1.3 }}>Order Now</Button>
           </div>
           <div className="imgWrapperRight"></div>
-        </div>
+        </motion.div>
       </BackgroundInfo>
 
-      <Slider>
+      <Slider initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 3 }} viewport={{ once: true }}>
         <div>
           <h2>Our coffee perfection feedback</h2>
           <p>Our customers has amazing things to say about us</p>
