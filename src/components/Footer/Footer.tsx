@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import bg_coffe_short from '../../assets/Group8.png';
-import bg_coffe_beans from './assets/CoffeBeansBackground.png';
+import CoffeBeansBackground from './assets/CoffeBeansBackground.png';
 import facebook from './assets/facebook.svg';
 import instagram from './assets/instagram.svg';
 import youtube from './assets/youtube.svg';
@@ -15,7 +15,7 @@ const BackgroundFooter = styled.div`
   margin-top: 82px;
 `;
 const BackgroundCoffeBeans = styled.div`
-  background-image: url(${bg_coffe_beans});
+  background-image: url(${CoffeBeansBackground});
   width: 100%;
   height: 100%;
   background-size: cover;
