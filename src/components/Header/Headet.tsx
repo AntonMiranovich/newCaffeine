@@ -96,6 +96,13 @@ const Wrapper = styled.div<WrapperProps>`
     gap: 60px;
     align-items: center;
 
+    p {
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
     @media (max-width: 900px) {
       gap: 20px;
     }
